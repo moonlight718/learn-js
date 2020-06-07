@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+</head>
+<body>
+  <div id="mvvm-app">
+    <input type="text" v-model="someStr">
+    <input type="text" v-model="child.someStr">
+    <p>{{someStr}}</p>
+    <p>{{child.someStr}}</p>
+    <p>{{getHelloWord}}</p>
+    <p v-html="htmlStr"></p>
+    <button v-on:click="clickBtn">change model</button>
+  </div>
+  <script src="./Observer.js"></script>
+  <script src="./Watcher.js"></script>
+  <script src="./Compile.js"></script>
+  <script src="./mvvm.js"></script>
+  <script>
+    const vm = new MVVM({
+      el: '#mvvm-app',
+      data: {
+        someStr: 'hello',
+        className: 'btn',
+        htmlStr: '<span style="color: red">red</span>',
+        child: {
+          someStr: 'World'
+        }
+      },
+      computed: {
+        getHelloWord() {
+          return this.someStr + this.child.someStr;
+        }
+      },
+      methods: {
+        clickBtn(e) {
+          const reandomStrArr = ['childOne', 'childTwo', 'childThree'];
+          this.child.someStr = reandomStrArr[parseInt(Math.random() * 3)];
+          this.someStr = reandomStrArr[parseInt(Math.random() * 3)];
+        }
+      }
+    });
+    vm.$watch('child.someStr', function() {
+      console.log(arguments);
+    });
+  </script>
+</body>
+</html>
