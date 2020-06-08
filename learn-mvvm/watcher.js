@@ -18,6 +18,12 @@ class Watcher {
     this.run();
   }
   run() {
+    // 1. 每次调用run()时会触发相应属性的getter
+    // gettter里面会触发dep.depend() ,继而触发这里的addDep
+    // 2. 假如相应属性的dep.id已经在当前Watcher的depIds里，说明不是一个新属性，仅仅时改变了值而已
+    // 则不需要当前watcher添加到该属性的dep里
+    // 3. 假如相应属性时新的属性值，则将当前watcher添加到新属性的dep里
+    // 如通过vm.child = {name: 'a'}改变了child.name的值，child.name就是一个新属性
     const value = this.get();
     const oldVal = this.value;
     if (value !== oldVal) {
