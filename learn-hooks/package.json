@@ -14,10 +14,21 @@
   "author": "shahe.hs",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
     "babel-loader": "^8.1.0",
     "html-webpack-plugin": "^4.3.0",
+    "jsx": "^0.9.89",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.10.2",
+    "@babel/runtime-corejs3": "^7.10.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

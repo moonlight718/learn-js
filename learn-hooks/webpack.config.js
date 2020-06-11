@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: '/\.jsx?$/',
+        test: /\.(js|jsx)$/,
         use: ['babel-loader'],
         exclude: /node_module/
       }
@@ -23,7 +23,11 @@ module.exports = {
       filename: 'index.html'
     })
   ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   devServer: {
-    port: 3000
+    port: 3000,
+    hot: true
   }
 };
