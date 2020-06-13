@@ -1,6 +1,5 @@
-import Index from './pages/index/index';
+import App from './app';
 import React from 'react';
-console.log(React);
 import { render } from 'react-dom';
 
-render(<Index />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));
