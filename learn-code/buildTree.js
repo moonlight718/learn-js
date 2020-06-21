@@ -14,11 +14,25 @@ function buildTree(preOrder, inOrder) {
     inOrderMap[inOrder[i]] = i;
   }
 
-  const root = build(preOrder, 0, length - 1, inOrder, 0, length - 1, inOrderMap);
+  const root = build(
+    preOrder,
+    0,
+    length - 1,
+    inOrder,
+    0,
+    length - 1,
+    inOrderMap);
   return root;
 }
 
-function build (preOrder, preOrderStart, preOrderEnd, inOrder, inOrderStart, inOrderEnd, inOrderMap) {
+function build (
+  preOrder,
+  preOrderStart,
+  preOrderEnd,
+  inOrder,
+  inOrderStart,
+  inOrderEnd,
+  inOrderMap) {
   if (preOrderStart > preOrderEnd) return null;
   const nodeVal = preOrder[preOrderStart];
   const inOrderIndex = inOrderMap[nodeVal];
