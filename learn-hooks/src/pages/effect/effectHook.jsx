@@ -1,5 +1,6 @@
 // effect hook 与 componentDidMount componentDidUpdate componentWillUnmount 具有相同的用户
 import React, { useState, useEffect } from 'react';
+import './EffectHook.less';
 
 export default function EffectHook() {
   const [count, setCount] = useState(0);
@@ -15,7 +16,7 @@ export default function EffectHook() {
   },[count]);
 
   return (
-    <div>
+    <div className="effect">
       <p>you clicked {count} times</p>
       <button onClick={() => {setCount(count + 1)}}>Click me</button>
     </div>
