@@ -9,6 +9,7 @@ module.exports = {
     filename:'bundle[hash:7].js',
     publicPath: '/'
   },
+  devtool: 'cheap-module-eval-source-map',
   module: {
     rules: [
       {
