@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNEXT",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "./lib",
+    "importHelpers": true,
+    "isolatedModules": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}
